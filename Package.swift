@@ -20,5 +20,10 @@ let package = Package(
             dependencies: ["JYNameSpace"],
             path: "Sources"
         ),
+        .testTarget(
+            name: "JYCodableTests",
+            dependencies: ["JYCodable"]
+        ),
+        
     ]
 )

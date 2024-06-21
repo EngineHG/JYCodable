@@ -6,7 +6,7 @@
 //  Created by CodeMan on 2020/9/23.
 //
 
-import UIKit
+import Foundation
 
 public protocol DefaultValue {
     
@@ -71,11 +71,14 @@ extension KeyedDecodingContainer {
 /// 声明方式
 ///
 ///     @Default<EmptyAry<T>>
-public struct EmptyAry<T>: DefaultValue where T: Codable & Equatable {
+public enum EmptyAry<T>: DefaultValue where T: Codable & Equatable {
     
-    public static var defaultValue: [T]{
-        return []
-    }
+    public static var defaultValue: [T]{ [] }
+}
+
+public enum Nil<T>: DefaultValue where T: Codable & Equatable {
+    
+    public static var defaultValue: T? { nil }
 }
 
 extension Bool {
